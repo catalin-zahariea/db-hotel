@@ -13,6 +13,10 @@ SELECT * FROM `ospiti` WHERE `document_type` = 'CI'
 
 SELECT * FROM `ospiti` WHERE `date_of_birth` >= '1989-01-01 00:00:00' 
 
+||
+
+SELECT * FROM `ospiti` WHERE YEAR(`date_of_birth`) > 1988 
+
 
 +------------------------------------------------------------------------------------------------+
 | 3.Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query) |
