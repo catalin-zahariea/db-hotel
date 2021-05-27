@@ -30,7 +30,14 @@ FROM `paganti`
 INNER JOIN `pagamenti` ON paganti.id = pagamenti.pagante_id
 WHERE YEAR(pagamenti.created_at) = '2018' && MONTH(pagamenti.created_at) = '05';
 
+||
 
+SELECT *
+FROMT `ospiti`
+INNER JOIN `prenotazioni_has_ospiti` ON ospiti.id = prenotazioni_has_ospiti.ospite_id
+INNER JOIN `pagamenti` ON prenotazioni_has_ospiti.prenotazione_id = pagamenti.prenotazione_id
+INNER JOIN `paganti` ON pagamenti.pagante_id = paganti.id
+WHERE YEAR(prenotazioni_has_ospiti.created_at) = '2018' && MONTH(prenotazioni_has_ospiti.created_at) = '05';
 
 +-----------------------------------------------------------------------------------+
 | 4.Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano |
